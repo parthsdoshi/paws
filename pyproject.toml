@@ -6,7 +6,7 @@ authors = ["Parth Doshi <doshi.parth9@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "~3.9"
 rumps = "^0.3.0"
 keyboard = "^0.13.5"
 
