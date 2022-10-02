@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "paws"
+version = "0.1.0"
+description = "Paws your laptop when your cat gets its paws on it!"
+authors = ["Parth Doshi <doshi.parth9@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+rumps = "^0.3.0"
+keyboard = "^0.13.5"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^5.4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
