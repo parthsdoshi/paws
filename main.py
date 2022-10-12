@@ -1,5 +1,7 @@
 import atexit
 import logging
+import os
+import sys
 import time
 from ctypes import CDLL
 from threading import Lock
@@ -14,7 +16,9 @@ from keyboard_utils import PARTH_QWERTY
 from rules.events_eligibility_rule import EventsEligibilityRule
 from rules.rules import NumEventsNotReleased, EventsWithinNumSeconds, CheckAllAdjacent
 
-# from keyboard._darwinkeyboard import KeyMap
+
+logging.basicConfig()
+logging.getLogger().setLevel(level=logging.DEBUG)
 
 
 CAT_PAW_DETECTION_RULES = (
@@ -31,7 +35,7 @@ STOP = "Stop"
 class PawsStatusBarApp(rumps.App):
     """Defines how the status bar app works."""
     def __init__(self, *args, rules: Iterable[EventsEligibilityRule], detected_callback: Callable[[], None], **kwargs):
-        """"""
+        """Initializes Paws"""
         super().__init__(*args, **kwargs)
         self.rules = rules
         self.presses: list[KeyboardEvent] = []
@@ -41,7 +45,7 @@ class PawsStatusBarApp(rumps.App):
         self.start_detection()
 
     @rumps.clicked(STOP)
-    def start_stop(self, sender: MenuItem):
+    def start_stop(self, sender: MenuItem) -> None:
         logging.info(f"Performing {sender.title}")
         if sender.title == START:
             self.start_detection()
@@ -72,7 +76,7 @@ class PawsStatusBarApp(rumps.App):
 
         return _detect_presses
 
-    def start_detection(self):
+    def start_detection(self) -> None:
         """Starts paws detection"""
         assert not self.kill_paw_detection, f"Already started!"
         logging.info("Starting detection.")
@@ -84,7 +88,7 @@ class PawsStatusBarApp(rumps.App):
         )
         atexit.register(self.kill_paw_detection)
 
-    def stop_detection(self):
+    def stop_detection(self) -> None:
         assert self.kill_paw_detection, f"You must start detection before we can stop detection."
         logging.info("Stopping detection.")
         self.kill_paw_detection()
@@ -103,8 +107,10 @@ def lock_mac() -> None:
     rumps.notification(title="Pawsed!", subtitle="Paws has locked your laptop!", message=None)
 
 
-if __name__ == "__main__":
-    PawsStatusBarApp(name="\U0001F63A", rules=CAT_PAW_DETECTION_RULES, detected_callback=lock_mac).run()
+ICON_PATH = "images/cat_scream_emoji.png"
 
-    # km = KeyMap()
-    # print(km.layout_specific_keys)
+
+if __name__ == "__main__":
+    program_path = os.path.abspath(os.path.dirname(sys.argv[0]))
+    icon_path = os.path.join(program_path, ICON_PATH)
+    PawsStatusBarApp(name="Paws", icon=icon_path, rules=CAT_PAW_DETECTION_RULES, detected_callback=lock_mac).run()

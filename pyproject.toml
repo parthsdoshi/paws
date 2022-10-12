@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "paws"
+name = "Paws"
 version = "0.1.0"
 description = "Paws your laptop when your cat gets its paws on it!"
 authors = ["Parth Doshi <doshi.parth9@gmail.com>"]
@@ -12,6 +12,7 @@ pyobjc = "^8.5.1"
 
 [tool.poetry.group.dev.dependencies]
 cx-Freeze = "^6.11.1"
+tomli = "^2.0.1"
 
 [build-system]
 requires = ["poetry-core"]
