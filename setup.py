@@ -34,7 +34,10 @@ build_exe_options = {
 bdist_mac_options = {
     "bundle_name": project.name,
     "iconfile": "images/cat_scream_emoji.icns",
-    "plist_items": [("NSAppleEventsUsageDescription", "")],  # added for keyboard event perm asking
+    "plist_items": [
+        ("NSAppleEventsUsageDescription", ""),  # added for keyboard event perm asking
+        ("LSBackgroundOnly", 1),  # no dock icon
+    ],
 }
 
 
