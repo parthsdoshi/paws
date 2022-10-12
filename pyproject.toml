@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "Paws"
 version = "0.1.0"
-description = "Paws your laptop when your cat gets its paws on it!"
+description = "Paws your laptop when your kitty gets its paws on it!"
 authors = ["Parth Doshi <doshi.parth9@gmail.com>"]
 readme = "README.md"
 
