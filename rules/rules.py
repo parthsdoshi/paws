@@ -2,7 +2,6 @@ import logging
 from typing import Iterable, Tuple, FrozenSet, Dict
 
 from keyboard import KeyboardEvent
-
 from keyboard_utils import STR_INT, NAME_CODE, KEYBOARD_FORMAT
 from rules.events_eligibility_rule import EventsEligibilityRule
 

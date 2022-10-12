@@ -5,11 +5,11 @@ from ctypes import CDLL
 from threading import Lock
 from typing import Iterable, Callable
 
-import keyboard
-from keyboard import KeyboardEvent
 import rumps
 from rumps import MenuItem
 
+import keyboard
+from keyboard import KeyboardEvent
 from keyboard_utils import PARTH_QWERTY
 from rules.events_eligibility_rule import EventsEligibilityRule
 from rules.rules import NumEventsNotReleased, EventsWithinNumSeconds, CheckAllAdjacent

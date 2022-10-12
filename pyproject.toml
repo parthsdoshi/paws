@@ -8,10 +8,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "~3.9"
 rumps = "^0.3.0"
-keyboard = "^0.13.5"
+pyobjc = "^8.5.1"
 
 [tool.poetry.group.dev.dependencies]
-pyinstaller = "^5.4.1"
+cx-Freeze = "^6.11.1"
 
 [build-system]
 requires = ["poetry-core"]
