@@ -1,5 +1,5 @@
 # Paws!
-Pawse your laptop when your kitty gets its paws on it!
+Paws your laptop when your kitty gets its paws on it!
 
 # To build:
 ```
