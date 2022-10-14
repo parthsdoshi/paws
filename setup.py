@@ -35,8 +35,11 @@ bdist_mac_options = {
     "bundle_name": project.name,
     "iconfile": "images/cat_scream_emoji.icns",
     "plist_items": [
-        ("NSAppleEventsUsageDescription", ""),  # added for keyboard event perm asking
-        ("LSBackgroundOnly", 1),  # no dock icon
+        ("CFBundleIdentifier", project.name),
+        ("NSAppleEventsUsageDescription", "This application records your previous 3 keystrokes to detect if a paw has typed on your keyboard. Keystrokes past this amount are deleted and never transmitted over the internet."),
+        ("LSUIElement", True),  # no dock icon
+        ("NSUserNotification", True),  # maybe tell macos that we want to send notifs?
+        ("NSUserNotificationAlertStyle", "banner"),
     ],
 }
 
@@ -49,6 +52,7 @@ setup(
         Executable(
             script="main.py",
             target_name=project.name,
+            icon="images/cat_scream_emoji.png",
         ),
     ],
     options={

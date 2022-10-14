@@ -1,3 +1,6 @@
 [submodule "submodules/keyboard"]
 	path = submodules/keyboard
 	url = git@github.com:boppreh/keyboard.git
+[submodule "submodules/pync"]
+	path = submodules/pync
+	url = git@github.com:SeTeM/pync.git

@@ -11,7 +11,7 @@ rumps = "^0.3.0"
 pyobjc = "^8.5.1"
 
 [tool.poetry.group.dev.dependencies]
-cx-Freeze = "^6.11.1"
+cx-Freeze = "6.11.1"
 tomli = "^2.0.1"
 
 [build-system]
