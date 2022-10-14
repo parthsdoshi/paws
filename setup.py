@@ -1,4 +1,4 @@
-"""CX Freeze manifest. Used to create a Paws executable."""
+"""CX Freeze manifest. Used to create an executable."""
 from typing import NamedTuple
 
 from cx_Freeze import setup, Executable
@@ -36,6 +36,7 @@ bdist_mac_options = {
     "iconfile": "images/cat_scream_emoji.icns",
     "plist_items": [
         ("CFBundleIdentifier", project.name),
+        ("CFBundleName", project.name),
         ("NSAppleEventsUsageDescription", "This application records your previous 3 keystrokes to detect if a paw has typed on your keyboard. Keystrokes past this amount are deleted and never transmitted over the internet."),
         ("LSUIElement", True),  # no dock icon
         ("NSUserNotification", True),  # maybe tell macos that we want to send notifs?

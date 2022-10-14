@@ -1,17 +1,19 @@
 [tool.poetry]
-name = "Paws"
+name = "Pawse"
 version = "0.1.0"
-description = "Paws your laptop when your kitty gets its paws on it!"
+description = "Pawse your laptop when your kitty gets its paws on it!"
 authors = ["Parth Doshi <doshi.parth9@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "~3.9"
-rumps = "^0.3.0"
+rumps = { git = "https://github.com/jaredks/rumps", rev = "45e1e6ba60aaef910781c242e3fa2fe3ca03e263" }
 pyobjc = "^8.5.1"
+python-dateutil = "^2.8.2"  # Used due to pync needing this.
+pync = "^2.0.3"
 
 [tool.poetry.group.dev.dependencies]
-cx-Freeze = "6.11.1"
+cx-Freeze = "^6.11.1"
 tomli = "^2.0.1"
 
 [build-system]
